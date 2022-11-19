@@ -1,36 +1,58 @@
 package locadora;
 
-import javax.xml.crypto.Data;
+import java.time.LocalDateTime;
 
 public class CarRental {
 
-	private Data start;
-	private Data finish;
+	private LocalDateTime start;
+	private LocalDateTime finish;
+	
+	private Veiculo veiculo;
+	private Invoice invoice;
 	
 	public CarRental() {
 		
 	}
 
-	public CarRental(Data start, Data finish) {
+	public CarRental(LocalDateTime start, LocalDateTime finish, Veiculo veiculo) {
 		this.start = start;
 		this.finish = finish;
+		this.veiculo = veiculo;
+		
 	}
 
-	public Data getStart() {
+	public LocalDateTime getStart() {
 		return start;
 	}
 
-	public void setStart(Data start) {
+	public void setStart(LocalDateTime start) {
 		this.start = start;
 	}
 
-	public Data getFinish() {
+	public LocalDateTime getFinish() {
 		return finish;
 	}
 
-	public void setFinish(Data finish) {
+	public void setFinish(LocalDateTime finish) {
 		this.finish = finish;
 	}
 
+	public Veiculo getVeiculo() {
+		return veiculo;
+	}
+
+	public void setVeiculo(Veiculo veiculo) {
+		this.veiculo = veiculo;
+	}
+
+	public Invoice getInvoice() {
+		return invoice;
+	}
+
+	public void setInvoice(Invoice invoice) {
+		this.invoice = invoice;
+	}
+
+	
 	
 }
