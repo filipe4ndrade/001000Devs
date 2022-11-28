@@ -1,7 +1,7 @@
 package exemplos;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Exemplo {
@@ -9,23 +9,37 @@ public class Exemplo {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
-		
-		List<String> list = new ArrayList<>();
-		String corAtual = null;
-		
-		do {
-			System.out.print("Digite uma cor: ");
-			corAtual = sc.nextLine();
-			list.add(corAtual);
+
+		Map<String, String> map = new HashMap<>();
+
+		for (int i = 0; i < 3; i++) {
+			System.out.print("Digite seu CPF: ");
+			String cpf = sc.next();
+			System.out.print("Digite seu nome: ");
+			sc.nextLine();
+			String nome = sc.nextLine();
 			
-			
-		}while(!corAtual.equals("preto"));
-		
-		for(String s : list) {
-			System.out.println("Cor: "+s);
+			map.put(cpf, nome);
 		}
 		
-		sc.close();
+		printDados(map);
 		
+		System.out.print("\nDigite um CPF para remover: ");
+		String cpf = sc.next();
+		
+		map.remove(cpf);
+		
+		printDados(map);
+		
+		sc.close();
+
 	}
+	
+	public static void printDados(Map<String,String> map) {
+		System.out.println("\nDADOS:");
+		for(String key : map.keySet()) {
+			System.out.println(key+": "+map.get(key));
+		}
+	}
+	
 }
