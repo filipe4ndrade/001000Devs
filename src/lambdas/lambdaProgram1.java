@@ -3,8 +3,7 @@ package lambdas;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-import java.util.function.Consumer;
-import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class lambdaProgram1 {
 
@@ -17,10 +16,10 @@ public class lambdaProgram1 {
 		list.add(new Product("Tablet", 350.50));
 		list.add(new Product("HD Case", 80.90));
 		
-		//Recebe um Consumer como argumento e percorre cada elemento
+		//map só funciona pra stream
+		List<String> names = list.stream().map(new UpcaseName()).collect(Collectors.toList());
 		
-		list.forEach(p->p.setPrice(p.getPrice()*1.1));
-		list.forEach(System.out::println);
+		names.forEach(System.out::println);
 	}
 
 }
