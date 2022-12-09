@@ -3,6 +3,7 @@ package lambdas;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.function.Predicate;
 
 public class lambdaProgram1 {
 
@@ -17,7 +18,11 @@ public class lambdaProgram1 {
 		
 		//list.removeIf(p-> p.getPrice()>=100);
 		//list.removeIf(new ProductPredicate());
-		list.removeIf(Product::nonStaticProductPredicate);
+		//list.removeIf(Product::staticProductPredicate);
+		//list.removeIf(Product::nonStaticProductPredicate);
+		Predicate<Product> pred = p-> p.getPrice()>=100;
+		
+		list.removeIf(pred);
 		
 		for(Product p : list) {
 			System.out.println(p);
