@@ -3,6 +3,7 @@ package lambdas;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 public class lambdaProgram1 {
@@ -17,8 +18,11 @@ public class lambdaProgram1 {
 		list.add(new Product("HD Case", 80.90));
 		
 		//Recebe um Consumer como argumento e percorre cada elemento
-		list.forEach(Product::nonStaticPriceUpdate);
-		
+		double por = 1.1;
+		Consumer<Product> cons = p->{
+			p.setPrice(p.getPrice()*por);
+		};	
+		list.forEach(cons);
 		list.forEach(System.out::println);
 	}
 
