@@ -17,7 +17,7 @@ public class lambdaProgram1 {
 		list.add(new Product("HD Case", 80.90));
 		
 		//map só funciona pra stream
-		List<String> names = list.stream().map(new UpcaseName()).collect(Collectors.toList());
+		List<String> names = list.stream().map(Product::staticUpperCaseName).collect(Collectors.toList());
 		
 		names.forEach(System.out::println);
 	}
