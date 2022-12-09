@@ -16,18 +16,10 @@ public class lambdaProgram1 {
 		list.add(new Product("Tablet", 350.50));
 		list.add(new Product("HD Case", 80.90));
 		
-		//list.removeIf(p-> p.getPrice()>=100);
-		//list.removeIf(new ProductPredicate());
-		//list.removeIf(Product::staticProductPredicate);
-		//list.removeIf(Product::nonStaticProductPredicate);
+		//Recebe um Consumer como argumento e percorre cada elemento
+		list.forEach(new PriceUpdate());
 		
-		//double min = 100.0;
-		//Predicate<Product> pred = p-> p.getPrice()>=min;
-		list.removeIf(p-> p.getPrice()>=100);
-		
-		for(Product p : list) {
-			System.out.println(p);
-		}
+		list.forEach(System.out::println);
 	}
 
 }
