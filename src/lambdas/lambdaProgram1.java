@@ -18,11 +18,8 @@ public class lambdaProgram1 {
 		list.add(new Product("HD Case", 80.90));
 		
 		//Recebe um Consumer como argumento e percorre cada elemento
-		double por = 1.1;
-		Consumer<Product> cons = p->{
-			p.setPrice(p.getPrice()*por);
-		};	
-		list.forEach(cons);
+		
+		list.forEach(p->p.setPrice(p.getPrice()*1.1));
 		list.forEach(System.out::println);
 	}
 
