@@ -17,7 +17,7 @@ public class lambdaProgram1 {
 		list.add(new Product("HD Case", 80.90));
 		
 		//Recebe um Consumer como argumento e percorre cada elemento
-		list.forEach(new PriceUpdate());
+		list.forEach(Product::nonStaticPriceUpdate);
 		
 		list.forEach(System.out::println);
 	}
