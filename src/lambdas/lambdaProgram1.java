@@ -16,7 +16,8 @@ public class lambdaProgram1 {
 		list.add(new Product("HD Case", 80.90));
 		
 		//list.removeIf(p-> p.getPrice()>=100);
-		list.removeIf(new ProductPredicate());
+		//list.removeIf(new ProductPredicate());
+		list.removeIf(Product::staticProductPredicate);
 		
 		for(Product p : list) {
 			System.out.println(p);
