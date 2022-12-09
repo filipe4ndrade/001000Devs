@@ -25,10 +25,12 @@ public class Product {
 		this.price = price;
 	}
 
+	//static trabalha com o produto que instanciarmos
 	public static boolean staticProductPredicate(Product p) {
 		return p.getPrice() >= 100.0;
 	}
 	
+	//não static é o método da instância
 	public boolean nonStaticProductPredicate() {
 		return price >= 100.0;
 	}
