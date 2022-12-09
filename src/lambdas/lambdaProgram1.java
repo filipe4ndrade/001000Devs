@@ -20,7 +20,9 @@ public class lambdaProgram1 {
 		//list.removeIf(new ProductPredicate());
 		//list.removeIf(Product::staticProductPredicate);
 		//list.removeIf(Product::nonStaticProductPredicate);
-		Predicate<Product> pred = p-> p.getPrice()>=100;
+		
+		double min = 100.0;
+		Predicate<Product> pred = p-> p.getPrice()>=min;
 		
 		list.removeIf(pred);
 		
