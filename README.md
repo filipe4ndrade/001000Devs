@@ -1,2 +1,2 @@
 # 001000Devs
-Alguns exemplos de Programação orientada a objetos.
+Vários exemplos de Programação orientada a objetos.
